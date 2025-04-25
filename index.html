@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Evet mi? Hayır mı?</title>
+  <style>
+    body {
+      text-align: center;
+      margin-top: 100px;
+      font-family: Arial, sans-serif;
+    }
+    #buttons {
+      margin-top: 30px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin: 20px;
+      position: relative;
+    }
+    #hayir {
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <h1>SİZİ ÜZDÜĞÜM İÇİN ÖZÜR DİLERİM KRALİÇEM BENİ AFFEDİCEKMİSİNİZ</h1>
+  <img src="Kaydet lâzım olur.jpeg" alt="tatlis kedi" width="300">
+  <div id="buttons">
+    <button id="evet">Evet</button>
+    <button id="hayir">Hayır</button>
+  </div>
+
+  <script>
+    // HAYIR butonu kaçsın
+    const hayirBtn = document.getElementById('hayir');
+    hayirBtn.addEventListener('mouseover', () => {
+      const maxX = window.innerWidth - hayirBtn.offsetWidth;
+      const maxY = window.innerHeight - hayirBtn.offsetHeight;
+      const randomX = Math.floor(Math.random() * maxX);
+      const randomY = Math.floor(Math.random() * maxY);
+      hayirBtn.style.left = `${randomX}px`;
+      hayirBtn.style.top = `${randomY}px`;
+    });
+
+    // EVET butonuna tıklanınca başka sayfaya geç
+    document.getElementById('evet').addEventListener('click', () => {
+      window.location.href = 'video.html'; // ← işte bu satır yönlendiriyor!
+    });
+  </script>
+</body>
+</html>
